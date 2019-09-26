@@ -1,0 +1,44 @@
+.mainPage {
+    background-color: #FFE600;
+    padding: 10px;
+
+    .logoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logoML {
+            max-width: 50px;
+            width: 50px;
+        }
+    }
+
+    .searchInput {
+        border-radius: 4px;
+        font-size: 18px;
+        color: #000000;
+    }
+
+    .inputRightAppend {
+        .inputRightText {
+            padding: 0;
+
+            button {
+                width: 100%;
+                height: 100%;
+                border-radius: 0 4px 4px 0;
+                background-color: #E9ECEF;
+                border: none;
+
+                .searchMagnet {
+                    max-width: 20px;
+                    width: 20px;
+                }
+
+                &:hover {
+                    background-color: rgba(#000000, 0.3);
+                }
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import boom from 'express-boom';
+import cors from 'cors';
 
 import categoriesRoute from './routes/categories';
 import descriptionsRoute from './routes/descriptions';
@@ -19,6 +20,9 @@ app.use(bodyParser.json());
 
 // Add boom errors
 app.use(boom());
+
+// Allow cors
+app.use(cors());
 
 // Routes
 app.use(categoriesRoute);

@@ -1,0 +1,30 @@
+.itemsCategory {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 14px;
+    color: #666666;
+    padding: 0;
+
+    li {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+
+        .chevron-right {
+            display: inline-block;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            width: 7px;
+            height: 7px;
+            transform: rotate(-45deg);
+            margin-left: 10px;
+        }
+    }
+
+    li:last-child {
+        .chevron-right {
+            display: none;
+        }
+    }
+}

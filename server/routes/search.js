@@ -6,7 +6,7 @@ const router = express.Router();
 // Search endpoint.
 router.get('/search', async function (req, res) {
     try {
-        const getSearch = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=' + req.query.search);
+        const getSearch = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=' + req.query.q);
         const { filters, results } = getSearch.data;
 
         const size = 4;
@@ -21,14 +21,21 @@ router.get('/search', async function (req, res) {
                 picture: product.thumbnail,
                 condition: product.condition,
                 free_shipping: product.shipping.free_shipping,
-                city: product.seller_address.city.name,
+                city: product.seller_address.state.name,
             };
         });
 
-        const searchedItems = {
-            categories: getCategoryName(filters),
+        let searchedItems = {
+            categories: {},
             items: products
         };
+
+        if (filters.length > 0) {
+            searchedItems = {
+                categories: getCategoryName(filters),
+                items: products
+            };
+        }
 
         res.send({
             code: 200,
