@@ -12,14 +12,12 @@ export const history = createBrowserHistory();
 
 const AppRouter = () => (
     <Router history={history}>
-        <div className='container'>
-            <Switch>
-                <Route path="/" component={Main} exact={true} />
-                <Route path="/items" component={Search} exact={true} />
-                <Route path="/items/:id" component={Items} exact={true} />
-                <Route component={NotFound} />
-            </Switch>
-        </div>
+        <Switch>
+            <Route path="/" component={Main} exact={true} />
+            <Route path="/items" component={Search} exact={true} />
+            <Route path="/items/:id" component={Items} exact={true} />
+            <Route component={NotFound} />
+        </Switch>
     </Router>
 );
 
