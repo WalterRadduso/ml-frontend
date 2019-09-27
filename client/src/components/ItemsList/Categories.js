@@ -9,7 +9,7 @@ export default ({ categories }) => (
                 return (
                     <li key={key}>
                         <span>{category}</span>
-                        <span className="chevron-right"></span>
+                        <span className="chevron-right"/>
                     </li>
                 )
             })}

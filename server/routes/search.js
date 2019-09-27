@@ -21,7 +21,7 @@ router.get('/search', async function (req, res) {
                 picture: product.thumbnail,
                 condition: product.condition,
                 free_shipping: product.shipping.free_shipping,
-                city: product.seller_address.state.name,
+                state: product.seller_address.state.name,
             };
         });
 

@@ -20,11 +20,34 @@ class Items extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            loading: false
+        };
+
+        this.getSearchItems = this.getSearchItems.bind(this);
         this.getSearchText = this.getSearchText.bind(this);
         this.checkSearchResult = this.checkSearchResult.bind(this);
     }
 
     componentDidMount() {
+        this.getSearchItems();
+    }
+
+    componentDidUpdate(prevProps) {
+        const { location: { search } } = this.props;
+
+        // If the values to search are different I get the the new items from API.
+        if (search !== prevProps.location.search) {
+            this.setState({
+                loading: true
+            });
+
+            this.getSearchItems();
+        }
+    }
+
+    // Get items from API.
+    getSearchItems() {
         const searchText = this.getSearchText();
 
         if (searchText) {
@@ -48,9 +71,10 @@ class Items extends Component {
     // Check if the request returns with data.
     checkSearchResult() {
         const { search } = this.props;
+        const { loading } = this.state;
 
         return (
-            Object.entries(search).length === 0 ? <Loading/> : <ItemsList items={search} />
+            (Object.entries(search).length === 0 || loading) ? <Loading/> : <ItemsList items={search} />
         );
     }
 

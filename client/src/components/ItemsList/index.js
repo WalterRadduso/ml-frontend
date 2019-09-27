@@ -3,7 +3,7 @@ import { Col, Row } from "reactstrap";
 
 // Import Components
 import Categories from "./Categories";
-import Items from "./Items";
+import ShowItems from "./ShowItems";
 
 // Import Style
 import './styles.scss';
@@ -12,13 +12,11 @@ class ItemsList extends Component {
     render() {
         const { items: { searchResult: { categories, items } } } = this.props;
 
-        console.log(items);
-
         return (
             <Row>
-                <Col xs="12" sm={{ size: 10, offset: 1 }}>
+                <Col xs="12" sm={{ size: 10, offset: 1 }} className="itemsSearch">
                     <Categories categories={categories} />
-                    <Items items={items} />
+                    <ShowItems items={items} />
                 </Col>
             </Row>
         );
