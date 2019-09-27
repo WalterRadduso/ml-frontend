@@ -2,10 +2,14 @@ import { SEARCH } from "../types";
 import axios from 'axios';
 import config from '../config';
 
-export const search = () => {
+export const getItems = (searchText) => {
     return (dispatch) => {
-        axios.get(`${config.api.host}/search`).then( (result) => {
-            dispatch({type: SEARCH, payload: result.data});
-        })
+        if (searchText) {
+            axios.get(`${config.api.host}/search?q=${searchText}`).then( (result) => {
+                dispatch({type: SEARCH, payload: result.data.data});
+            });
+        }
+
+        dispatch({type: SEARCH, payload: { items: [] }});
     }
 };

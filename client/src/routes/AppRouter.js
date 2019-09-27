@@ -1,10 +1,10 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
-import Main from '../components/Main';
-import Search from '../components/Search';
+import Item from '../components/Item';
 import Items from '../components/Items';
 import NotFound from '../components/NotFound';
+import SearchInput from '../components/SearchInput';
 
 import { createBrowserHistory } from 'history';
 
@@ -13,9 +13,9 @@ export const history = createBrowserHistory();
 const AppRouter = () => (
     <Router history={history}>
         <Switch>
-            <Route path="/" component={Main} exact={true} />
-            <Route path="/items" component={Search} exact={true} />
-            <Route path="/items/:id" component={Items} exact={true} />
+            <Route path="/" component={SearchInput} exact={true} />
+            <Route path="/items" component={Items} exact={true} />
+            <Route path="/items/:id" component={Item} exact={true} />
             <Route component={NotFound} />
         </Switch>
     </Router>
