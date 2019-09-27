@@ -1,38 +1,43 @@
 import React  from 'react';
-import { Col, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import freeShipping from '../../assets/images/ic_shipping.png';
 import './styles.scss';
 
 export default ({ items }) => (
-    <Row className="itemsList marginTop16">
+    <div className="itemsList marginTop16">
         {items.map((item, key) => {
             return (
-                <Col xs="12" key={key} >
-                    <Link to={`/items/${item.id}`}>
-                        <div className="item">
+                <div key={key} className="item">
+                    <Link to={`/items/${item.id}`} className="itemLink">
+                        <div className="itemContent">
                             <img className="itemImage" src={item.picture} alt="Imagen del Producto"/>
 
                             <div className="itemDescription">
-                                <div className="itemPriceTitle">
-                                    <div className="price marginTop16 marginBottom32">
-                                        <p>
-                                            $ {item.price.amount}
-                                        </p>
+                                <div className="itemText">
+                                    <div className="itemTopText marginTop32 marginBottom32">
+                                        <div className="itemPrice">
+                                            <p>
+                                                $ {item.price.amount}
+                                            </p>
 
-                                        {item.free_shipping ? <img className="freeShipping" src={freeShipping} alt=""/> : null}
+                                            {item.free_shipping ? <img className="freeShipping" src={freeShipping} alt=""/> : null}
+                                        </div>
+
+                                        <div className="itemState">
+                                            <span>{item.state}</span>
+                                        </div>
                                     </div>
 
-                                    <h5 className="title">{item.title}</h5>
+                                    <h5 className="itemTitle">{item.title}</h5>
                                 </div>
                             </div>
                         </div>
 
                         <hr className="separator"/>
                     </Link>
-                </Col>
+                </div>
             )
         })}
-    </Row>
+    </div>
 );
