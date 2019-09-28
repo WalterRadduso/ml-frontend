@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row } from "reactstrap";
 
 // Import Components
-import Categories from "./Categories";
+import Categories from "../Categories";
 import ShowItems from "./ShowItems";
 
 // Import Style

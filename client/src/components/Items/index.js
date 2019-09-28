@@ -13,9 +13,6 @@ import SearchInput from '../SearchInput';
 import Loading from '../Loading';
 import ItemsList from '../ItemsList';
 
-// Import Style
-import './styles.scss';
-
 class Items extends Component {
     constructor(props) {
         super(props);

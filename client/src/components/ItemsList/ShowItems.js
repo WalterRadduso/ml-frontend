@@ -3,6 +3,18 @@ import { Link } from "react-router-dom";
 
 import freeShipping from '../../assets/images/ic_shipping.png';
 import './styles.scss';
+import NumberFormat from "react-number-format";
+
+const transformPrice = (price) => {
+    const priceDivided = price.toString().split('.');
+
+    return (
+        <React.Fragment>
+            <NumberFormat value={priceDivided[0]} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={'$ '} />
+            <span className="priceDecimal">{priceDivided[1]}</span>
+        </React.Fragment>
+    );
+};
 
 export default ({ items }) => (
     <div className="itemsList marginTop16">
@@ -17,8 +29,8 @@ export default ({ items }) => (
                                 <div className="itemText">
                                     <div className="itemTopText marginTop32 marginBottom32">
                                         <div className="itemPrice">
-                                            <p>
-                                                $ {item.price.amount}
+                                            <p className="price">
+                                                {transformPrice(item.price.amount)}
                                             </p>
 
                                             {item.free_shipping ? <img className="freeShipping" src={freeShipping} alt=""/> : null}

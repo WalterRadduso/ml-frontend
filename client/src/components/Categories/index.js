@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Import Styles
 import './styles.scss';
 
 export default ({ categories }) => (

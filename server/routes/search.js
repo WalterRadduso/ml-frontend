@@ -15,8 +15,8 @@ router.get('/search', async function (req, res) {
                 id: product.id,
                 title: product.title,
                 price: {
-                    currency: product.installments.currency_id,
-                    amount: product.installments.amount
+                    currency: product.currency_id,
+                    amount: product.price
                 },
                 picture: product.thumbnail,
                 condition: product.condition,
