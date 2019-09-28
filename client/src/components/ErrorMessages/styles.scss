@@ -1,0 +1,12 @@
+@import '../../assets/styles/variables';
+
+.emptySearch {
+    border-radius: 4px;
+    background-color: $colorWhite;
+    text-align: center;
+
+    p {
+        margin-bottom: 0;
+        padding: 16px;
+    }
+}
