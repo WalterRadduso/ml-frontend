@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/items/:id', async function (req, res) {
     try {
         const itemId = req.params.id;
-        const getItem = await axios.get('https://api.mercadolibre.com/items/' + itemId);
+        const getItem = await axios.get(`${process.env.ML_API}/items/${itemId}`);
         const product = getItem.data;
 
         const item = {

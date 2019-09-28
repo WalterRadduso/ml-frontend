@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from "react-helmet";
 
 import { history } from "../../routes/AppRouter";
 
@@ -58,8 +59,6 @@ class Item extends Component {
     showItemObtained() {
         const { items: { itemObtained } } = this.props;
 
-        console.log('itemObtained: ', itemObtained);
-
         return (
             (itemObtained && Object.entries(itemObtained).length > 0) ?
                 <Row>
@@ -74,8 +73,14 @@ class Item extends Component {
     }
 
     render() {
+        const { items: { itemObtained } } = this.props;
+
         return (
             <React.Fragment>
+                <Helmet>
+                    <title>{(itemObtained && Object.entries(itemObtained).length > 0) ? itemObtained.title : null}</title>
+                </Helmet>
+
                 <SearchInput inputSearch={''} />
 
                 <Main>
