@@ -7,7 +7,7 @@ export const getItems = (searchText) => {
     return (dispatch) => {
         if (searchText) {
             axios
-                .get(`${config.api.host}/search?q=${searchText}`)
+                .get(`${config.api.host}/items?q=${searchText}`)
                 .then( (result) => {
                     let searchResult = result.data.data;
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 const router = express.Router();
 
 // Search endpoint.
-router.get('/search', async function (req, res) {
+router.get('/items', async function (req, res) {
     try {
         const getSearch = await axios.get(`${process.env.ML_API}/sites/MLA/search?q=${req.query.q}`);
         const { filters, results } = getSearch.data;
