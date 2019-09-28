@@ -18,6 +18,7 @@ router.get('/items/:id', async function (req, res) {
                 amount: product.price
             },
             picture: product.pictures.shift().url,
+            permalink: product.permalink,
             condition: product.condition,
             free_shipping: product.shipping.free_shipping,
             city: product.seller_address.city.name,

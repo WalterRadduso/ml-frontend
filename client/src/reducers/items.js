@@ -4,7 +4,7 @@ const defaultState = [];
 
 export default (state = defaultState, action) => {
     if (action.type === ITEMS) {
-        return { ...state, getItem: action.payload };
+        return { ...state, itemObtained: action.payload };
     } else {
         return state;
     }

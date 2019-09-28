@@ -5,8 +5,6 @@ import {
     Row
 } from 'reactstrap';
 
-import './styles.scss';
-
 const Main = ({ children }) => (
     <Container fluid={true}>
         <Row>
