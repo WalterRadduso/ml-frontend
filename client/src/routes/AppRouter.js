@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
+// Import Components
 import Item from '../components/Item';
 import Items from '../components/Items';
 import NotFound from '../components/NotFound';

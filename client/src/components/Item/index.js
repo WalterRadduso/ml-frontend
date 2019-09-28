@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Col, Row } from "reactstrap";
 import { Helmet } from "react-helmet";
 
 import { history } from "../../routes/AppRouter";
@@ -17,7 +18,6 @@ import ShowItem from "./ShowItem";
 
 // Import Styles.
 import './styles.scss';
-import { Col, Row } from "reactstrap";
 
 class Item extends Component {
     constructor(props) {
@@ -44,6 +44,7 @@ class Item extends Component {
         }
     }
 
+    // Ge the item data from API.
     getItemId() {
         const { match: { params: { id } } } = this.props;
 
@@ -55,9 +56,11 @@ class Item extends Component {
         this.props.getItem(id);
     }
 
+    // Show the data of the item Obtained.
     showItemObtained() {
         const { items: { itemObtained } } = this.props;
-        
+
+        // If the item obtained is empty (API error or ID doesn't exist).
         if (itemObtained && Object.entries(itemObtained).length > 0) {
             if (itemObtained.result === 'empty') {
                 return <ErrorMessages message="El producto que intenta abrir no existe, pruebe con buscar nuevamente."/>;

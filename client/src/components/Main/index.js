@@ -1,9 +1,5 @@
 import React  from 'react';
-import {
-    Container,
-    Col,
-    Row
-} from 'reactstrap';
+import { Container, Col, Row } from 'reactstrap';
 
 const Main = ({ children }) => (
     <Container fluid={true}>

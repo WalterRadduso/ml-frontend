@@ -2,6 +2,7 @@ import { ITEMS } from "../types";
 import axios from 'axios';
 import config from '../config';
 
+// Get the Item by ID.
 export const getItem = (itemID) => {
     return (dispatch) => {
         if (itemID) {
