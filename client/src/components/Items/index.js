@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { parse } from 'query-string';
 import { connect } from 'react-redux';
+import { Helmet } from "react-helmet";
 
 import { history } from '../../routes/AppRouter';
 
@@ -83,6 +84,10 @@ class Items extends Component {
 
         return (
             <React.Fragment>
+                <Helmet>
+                    <title>Buscando productos</title>
+                </Helmet>
+
                 <SearchInput inputSearch={searchText.search} />
 
                 <Main>

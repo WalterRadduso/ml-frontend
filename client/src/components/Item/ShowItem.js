@@ -37,7 +37,6 @@ const transformPrice = (price) => {
 
 export default ({ item }) => (
     <div className="itemObtained marginTop16">
-        {console.table(item)}
         <div className="itemTopInfo">
             <img className="itemImage" src={item.picture} alt="Imagen del Producto"/>
 

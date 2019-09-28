@@ -6,7 +6,7 @@ const router = express.Router();
 // Search endpoint.
 router.get('/search', async function (req, res) {
     try {
-        const getSearch = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=' + req.query.q);
+        const getSearch = await axios.get(`${process.env.ML_API}/sites/MLA/search?q=${req.query.q}`);
         const { filters, results } = getSearch.data;
 
         const size = 4;
