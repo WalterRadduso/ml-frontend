@@ -2,6 +2,7 @@ import { SEARCH } from "../types";
 import axios from 'axios';
 import config from '../config';
 
+// Get the Items by a search text.
 export const getItems = (searchText) => {
     return (dispatch) => {
         if (searchText) {

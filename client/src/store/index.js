@@ -1,7 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import reduxThunk from 'redux-thunk';
+
+// Import Reducers
 import searchReducer from '../reducers/search';
 import itemsReducer from '../reducers/items';
-import thunk from 'redux-thunk';
 
 export default () => {
     return createStore(
@@ -9,5 +11,5 @@ export default () => {
             search: searchReducer,
             items: itemsReducer
         }),
-        applyMiddleware(thunk));
+        applyMiddleware(reduxThunk));
 };

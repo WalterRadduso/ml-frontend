@@ -87,6 +87,7 @@ class SearchInput extends Component {
                                         onChange={e => this.updateInputValue(e)}
                                         onKeyDown={this.handleKeyDown}
                                         value={inputSearch}
+                                        name="search"
                                     />
 
                                     <InputGroupAddon addonType="append" className="inputRightAppend">

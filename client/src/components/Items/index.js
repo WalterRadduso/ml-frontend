@@ -9,11 +9,11 @@ import { history } from '../../routes/AppRouter';
 import { getItems } from '../../actions/search';
 
 // Import Components
-import Main from '../Main';
-import SearchInput from '../SearchInput';
-import Loading from '../Loading';
 import ErrorMessages from '../ErrorMessages';
 import ItemsList from '../ItemsList';
+import Loading from '../Loading';
+import Main from '../Main';
+import SearchInput from '../SearchInput';
 
 class Items extends Component {
     constructor(props) {
@@ -63,7 +63,7 @@ class Items extends Component {
         return searchText;
     }
 
-    // Check if the request returns with data.
+    // Check if the request returns with data and show the items.
     checkSearchResult() {
         const { search } = this.props;
 
@@ -74,6 +74,7 @@ class Items extends Component {
                 showLoading = false;
             }
 
+            // If the search result is empty (API error or items doesn't exist).
             if (search.searchResult.result === 'empty') {
                 return <ErrorMessages message="No se han encontrado productos con ese nombre, inténtelo nuevamente."/>;
             }

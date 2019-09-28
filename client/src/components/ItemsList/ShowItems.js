@@ -5,7 +5,8 @@ import freeShipping from '../../assets/images/ic_shipping.png';
 import './styles.scss';
 import NumberFormat from "react-number-format";
 
-const transformPrice = (price) => {
+// Format the price text.
+const formatPrice = (price) => {
     const priceDivided = price.toString().split('.');
 
     return (
@@ -30,7 +31,7 @@ export default ({ items }) => (
                                     <div className="itemTopText marginTop32 marginBottom32">
                                         <div className="itemPrice">
                                             <p className="price">
-                                                {transformPrice(item.price.amount)}
+                                                {formatPrice(item.price.amount)}
                                             </p>
 
                                             {item.free_shipping ? <img className="freeShipping" src={freeShipping} alt=""/> : null}

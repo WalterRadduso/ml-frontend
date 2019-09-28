@@ -38,7 +38,7 @@ router.get('/items/:id', async function (req, res) {
 });
 
 async function getCategories(categoryId) {
-    const getCategory = await axios.get('https://api.mercadolibre.com/categories/' + categoryId);
+    const getCategory = await axios.get(`${process.env.ML_API}/categories/${categoryId}`);
     const { path_from_root } = getCategory.data;
 
     return path_from_root.map(path => {
@@ -47,8 +47,8 @@ async function getCategories(categoryId) {
 }
 
 async function getDescription(itemId) {
-    const getCategory = await axios.get('https://api.mercadolibre.com/items/' + itemId + '/description');
-    return getCategory.data.plain_text;
+    const getDescription = await axios.get(`${process.env.ML_API}/items/${itemId}/description`);
+    return getDescription.data.plain_text;
 }
 
 module.exports = router;

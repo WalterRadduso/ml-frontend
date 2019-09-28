@@ -1,5 +1,5 @@
-/** ------------------- Search Actions --------------------**/
+/** ------------------- Search Type --------------------**/
 export const SEARCH = 'SEARCH';
 
-/** ------------------- Items Actions --------------------**/
+/** ------------------- Items Type --------------------**/
 export const ITEMS = 'ITEMS';

@@ -16,6 +16,7 @@ class App extends Component {
                     <meta name="description"
                           content="Test práctico para aspirantes al área de front-end de Mercado Libre."/>
                 </Helmet>
+
                 <AppRouter/>
             </Provider>
         );

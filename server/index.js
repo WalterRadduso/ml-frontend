@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import boom from 'express-boom';
 import cors from 'cors';
 
+// Import Routes
 import categoriesRoute from './routes/categories';
 import descriptionsRoute from './routes/descriptions';
 import itemsRoute from './routes/items';

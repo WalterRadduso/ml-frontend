@@ -6,7 +6,7 @@ const router = express.Router();
 // Category endpoint.
 router.get('/categories/:id', async function (req, res) {
     try {
-        const getCategory = await axios.get('https://api.mercadolibre.com/categories/' + req.params.d);
+        const getCategory = await axios.get(`${process.env.ML_API}/categories/${req.params.d}`);
 
         res.send({
             code: 200,
