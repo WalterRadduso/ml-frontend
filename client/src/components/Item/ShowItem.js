@@ -9,11 +9,11 @@ const translateCondition = (condition, uppercase = false) => {
     let newCondition = null;
 
     if (condition === 'new') {
-        newCondition = 'nuevo';
+        newCondition = 'nuevo -';
     }
 
     if (condition === 'used') {
-        newCondition = 'usado';
+        newCondition = 'usado -';
     }
 
     // Make the first letter uppercase
@@ -42,7 +42,7 @@ export default ({ item }) => (
 
             <div className="itemInfo marginTop32">
                 <p className="itemCondition">
-                    {translateCondition(item.condition, true)} - {item.sold_quantity} vendidos
+                    {translateCondition(item.condition, true)} {item.sold_quantity} vendidos
                 </p>
 
                 <h5 className="itemTitle marginBottom32">

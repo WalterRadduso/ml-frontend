@@ -12,6 +12,7 @@ import { getItems } from '../../actions/search';
 import Main from '../Main';
 import SearchInput from '../SearchInput';
 import Loading from '../Loading';
+import ErrorMessages from '../ErrorMessages';
 import ItemsList from '../ItemsList';
 
 class Items extends Component {
@@ -71,6 +72,10 @@ class Items extends Component {
         if (Object.entries(search).length !== 0) {
             if (search.searchResult.items.length > 0) {
                 showLoading = false;
+            }
+
+            if (search.searchResult.result === 'empty') {
+                return <ErrorMessages message="No se han encontrado productos con ese nombre, inténtelo nuevamente."/>;
             }
         }
 

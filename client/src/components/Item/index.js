@@ -4,17 +4,16 @@ import { Helmet } from "react-helmet";
 
 import { history } from "../../routes/AppRouter";
 
-// Import Components
-import SearchInput from "../SearchInput";
-import Main from "../Main";
-
 // Import Actions
 import { getItem } from '../../actions/items';
 
 // Import Components
-import Loading from "../Loading";
-import ShowItem from "./ShowItem";
 import Categories from "../Categories";
+import ErrorMessages from "../ErrorMessages";
+import Loading from "../Loading";
+import Main from "../Main";
+import SearchInput from "../SearchInput";
+import ShowItem from "./ShowItem";
 
 // Import Styles.
 import './styles.scss';
@@ -58,6 +57,12 @@ class Item extends Component {
 
     showItemObtained() {
         const { items: { itemObtained } } = this.props;
+        
+        if (itemObtained && Object.entries(itemObtained).length > 0) {
+            if (itemObtained.result === 'empty') {
+                return <ErrorMessages message="El producto que intenta abrir no existe, pruebe con buscar nuevamente."/>;
+            }
+        }
 
         return (
             (itemObtained && Object.entries(itemObtained).length > 0) ?
