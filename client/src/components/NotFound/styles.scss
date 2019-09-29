@@ -1,0 +1,15 @@
+@import "../../assets/styles/variables";
+
+.error404 {
+    border-radius: 4px;
+    background-color: $colorWhite;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+     h6 {
+         text-align: center;
+     }
+}

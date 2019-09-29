@@ -1,0 +1,103 @@
+@import '../../assets/styles/variables';
+
+.itemObtained {
+    border-radius: 4px;
+    background-color: $colorWhite;
+
+    .itemTopInfo {
+        display: flex;
+        align-items: flex-start;
+
+        .itemImage {
+            width: 680px;
+            margin: 32px;
+        }
+
+        .itemInfo {
+            width: calc(100% - 680px);
+            color: $color333;
+
+            .itemCondition {
+                margin-bottom: 16px;
+                font-size: 14px;
+                color: $color666;
+            }
+
+            .itemTitle {
+                font-size: 24px;
+                padding-right: 32px;
+            }
+
+            .itemPrice {
+                font-size: 46px;
+                display: flex;
+
+                .priceDecimal {
+                    font-size: 23px;
+                    line-height: 1.7;
+                    margin-left: 2px;
+                }
+            }
+
+            .itemButton {
+                padding-right: 32px;
+
+                .btnBuy {
+                    background-color: $colorBlue;
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+
+    .itemDescription {
+        margin-left: 32px;
+        width: 680px;
+        color: $color333;
+
+        .itemTitle {
+            font-size: 28px;
+        }
+
+        .itemText {
+            padding-bottom: 32px;
+            font-size: 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1224px) {
+    .itemObtained {
+        .itemTopInfo {
+            .itemInfo {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .itemObtained {
+        .itemTopInfo {
+            display: block;
+
+            .itemImage {
+                width: 100%;
+                margin: 0;
+                padding: 32px;
+            }
+
+            .itemInfo {
+                padding: 0 32px 32px 32px;
+                margin: 0;
+            }
+        }
+
+        .itemDescription {
+            width: 100%;
+            padding: 0 32px;
+            margin: 0;
+        }
+    }
+}
