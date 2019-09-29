@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2019-09-29
+This project was created with server and client side.
+In this version you are able to search products and check his value and the description of it.
+
 #### Server
     * Created with ExpressJS.
     * Routes:
@@ -9,31 +12,13 @@ All notable changes to this project will be documented in this file.
         - Description
         - Items.
         - Search.
-    * Libraries:
-        - Axios
-        - Body-parser.
-        - Cors.
-        - Currently.
-        - Dotenv.
-        - Express-Boom.
-        - Nodemon.
+        
 #### Client
     * Created with ReactJS.
     * Routes:
         - /
         - /items?search=
         - /items/:id
-    * Libraries:
-        - Axios
-        - Node-sass
-        - React-helmet.
-        - React-number-format.
-        - React-redux.
-        - React-router
-        - Reactstrap
-        - Redux.
-        - Redux-thunk.
-        - Query-string.
     * Components:
         - Categories.
         - ErrorMessages.
@@ -44,6 +29,4 @@ All notable changes to this project will be documented in this file.
         - Main.
         - NotFound.
         - SearchInput.
-    * Actions and Reducers:
-        - Items
-        - Search
+        
